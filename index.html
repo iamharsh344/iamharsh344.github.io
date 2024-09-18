@@ -1,13 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Harsh Portfilo</title>
+    <title>Harsh's Portfolio</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-        </style>
+        ::selection {
+            background: rgb(43, 43, 43);
+            color: white;
+        }
+        .commonninja-ribbon-link{
+            display: none !important;;
+        }
+    </style>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init({
+              publicKey: "WFZcRetuv3qvOQiAy",
+            });
+        })();
+    </script>
+    <script type="text/javascript">
+        window.onload = function() {
+            document.getElementById('contact-form').addEventListener('submit', function(event) {
+                event.preventDefault();
+                var name = document.getElementById('user_name').value;
+                var email = document.getElementById('user_email').value;
+                var message = document.getElementById('message').value;
+
+                if (name === "" || email === "" || message === "") {
+                    alert("Please fill in all fields.");
+                } else {
+                    emailjs.sendForm('service_cqieage', 'template_aqk0eye', this)
+                    .then(() => {
+                            document.getElementById('submit').value = 'Submited';
+                            document.getElementById('submit').disabled = true;
+                        }, (error) => {
+                            // console.log('FAILED...', error);
+                        });
+                }
+
+            });
+        }
+    </script>
 </head>
 <body style="font-family: Poppins;">
 
@@ -40,12 +78,11 @@
         </div>
     </div>
 
-    <section id="about" class="lg:mx-64 mx-5 flex justify-between items-center text-gray-900">
-        <div>
+    <section id="about" class="xl:mx-64 lg:mx-14 mx-10 flex flex-col-reverse lg:flex-row lg:gap-0 gap-10 justify-between items-center text-gray-900 lg:my-20 my-10">
+        <div class="mx-auo">
             <p class="text-lg text-gray-800">Hey there i am</p>
             <p class="text-5xl font-semibold">Harsh Choudhary</p>
             <p class="text-3xl text-gray-800 mt-5">Game & Web Developer</p>
-
             <div class="flex gap-5 my-5">
                 <a href="https://www.instagram.com/harsh.choudhary344/" target="_blank"><svg class="text-gray-500 hover:text-gray-600 duration-300 w-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024"><path fill="currentColor" d="M512 306.9c-113.5 0-205.1 91.6-205.1 205.1S398.5 717.1 512 717.1S717.1 625.5 717.1 512S625.5 306.9 512 306.9m0 338.4c-73.4 0-133.3-59.9-133.3-133.3S438.6 378.7 512 378.7S645.3 438.6 645.3 512S585.4 645.3 512 645.3m213.5-394.6c-26.5 0-47.9 21.4-47.9 47.9s21.4 47.9 47.9 47.9s47.9-21.3 47.9-47.9a47.84 47.84 0 0 0-47.9-47.9M911.8 512c0-55.2.5-109.9-2.6-165c-3.1-64-17.7-120.8-64.5-167.6c-46.9-46.9-103.6-61.4-167.6-64.5c-55.2-3.1-109.9-2.6-165-2.6c-55.2 0-109.9-.5-165 2.6c-64 3.1-120.8 17.7-167.6 64.5C132.6 226.3 118.1 283 115 347c-3.1 55.2-2.6 109.9-2.6 165s-.5 109.9 2.6 165c3.1 64 17.7 120.8 64.5 167.6c46.9 46.9 103.6 61.4 167.6 64.5c55.2 3.1 109.9 2.6 165 2.6c55.2 0 109.9.5 165-2.6c64-3.1 120.8-17.7 167.6-64.5c46.9-46.9 61.4-103.6 64.5-167.6c3.2-55.1 2.6-109.8 2.6-165m-88 235.8c-7.3 18.2-16.1 31.8-30.2 45.8c-14.1 14.1-27.6 22.9-45.8 30.2C695.2 844.7 570.3 840 512 840s-183.3 4.7-235.9-16.1c-18.2-7.3-31.8-16.1-45.8-30.2c-14.1-14.1-22.9-27.6-30.2-45.8C179.3 695.2 184 570.3 184 512s-4.7-183.3 16.1-235.9c7.3-18.2 16.1-31.8 30.2-45.8s27.6-22.9 45.8-30.2C328.7 179.3 453.7 184 512 184s183.3-4.7 235.9 16.1c18.2 7.3 31.8 16.1 45.8 30.2c14.1 14.1 22.9 27.6 30.2 45.8C844.7 328.7 840 453.7 840 512s4.7 183.2-16.2 235.8"/></svg></a>
                 <a href="https://x.com/harsh_344" target="_blank"><svg class="text-gray-500 hover:text-gray-600 duration-300 w-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M18.205 2.25h3.308l-7.227 8.26l8.502 11.24H16.13l-5.214-6.817L4.95 21.75H1.64l7.73-8.835L1.215 2.25H8.04l4.713 6.231zm-1.161 17.52h1.833L7.045 4.126H5.078z"/></svg></a>
@@ -53,15 +90,14 @@
                 <a href="https://www.linkedin.com/in/harsh344/" target="_blank"><svg class="text-gray-500 hover:text-gray-600 duration-300 w-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path fill="currentColor" d="M10 .4C4.698.4.4 4.698.4 10s4.298 9.6 9.6 9.6s9.6-4.298 9.6-9.6S15.302.4 10 .4M7.65 13.979H5.706V7.723H7.65zm-.984-7.024c-.614 0-1.011-.435-1.011-.973c0-.549.409-.971 1.036-.971s1.011.422 1.023.971c0 .538-.396.973-1.048.973m8.084 7.024h-1.944v-3.467c0-.807-.282-1.355-.985-1.355c-.537 0-.856.371-.997.728c-.052.127-.065.307-.065.486v3.607H8.814v-4.26c0-.781-.025-1.434-.051-1.996h1.689l.089.869h.039c.256-.408.883-1.01 1.932-1.01c1.279 0 2.238.857 2.238 2.699z"/></svg></a>
                 <a href="https://www.facebook.com/Harsh123choudhary/" target="_blank"><svg class="text-gray-500 hover:text-gray-600 duration-300 w-8 cursor-pointer" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="currentColor" d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95"/></svg></a>
             </div>
-
             <button class="p-5 py-2.5 border rounded-full border-gray-400 mt-2.5 text-lg hover:border-gray-900 duration-300">Download CV</button>
         </div>
-        <img alt="Avatar" src="https://portfolio-tailwind.preview.uideck.com/demos/personal/images/hero-image.png">
+        <img class="lg:size-96 size-80 rounded-full duration-300" src="./avatar.jpg">
     </section>
 
-    <hr class="lg:mx-64 mx-5 my-24">
+    <hr class="xl:mx-64 lg:mx-14 mx-10 my-24">
 
-    <section id="projects" class="lg:mx-64 mx-5 mt-12 text-center">
+    <section id="projects" class="xl:mx-64 lg:mx-14 mx-10 mt-12 text-center">
         <h1 class="font-semibold text-3xl mb-5">About Me</h1>
         <p class="text-gray-500 w-3/ 4">
             I am Harsh Choudhary, a web and game developer with 4 years of experience in web development and 2 years in
@@ -71,23 +107,23 @@
         </p>
     </section>
 
-    <hr class="lg:mx-64 mx-5 my-24">
+    <hr class="xl:mx-64 lg:mx-14 mx-10 my-24">
 
-    <div class="lg:mx-64 mx-5">
-        <div class="flex">
+    <div class="xl:mx-64 lg:mx-14 mx-10">
+        <div class="lg:flex">
             <div class="flex-1 flex justify-center">
-                <img class="w-64" alt="Fiverr" src="https://stockimg.ai/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FAbdurrahman-Subh%2Fmdx-blog%2Fmain%2Fimages%2Flogo-fiverr.png&w=750&q=75">
+                <img class="w-64 lg:block hidden" alt="Fiverr" src="https://stockimg.ai/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2FAbdurrahman-Subh%2Fmdx-blog%2Fmain%2Fimages%2Flogo-fiverr.png&w=750&q=75">
             </div>
             <div class="flex-1 flex flex-col justify-between">
                 <div>
-                    <h1 class="font-bold text-3xl">Freelancing Experience</h1>
+                    <h1 class="font-bold text-3xl text-center lg:text-start">Freelancing Experience</h1>
                     <div class="text-gray-500 mt-5">
                         I have successfully completed various projects for international clients through freelancing platforms. My work spans web development, game development, and customized solutions designed to match client requirements.
                     </div>
                 </div>
 
                 <a href="https://www.fiverr.com/harsh901" target="_blank">
-                    <div class="flex items-center gap-1 cursor-pointer group">
+                    <div class="flex items-center gap-1 cursor-pointer group mt-5">
                         <div class="transition duration-300">
                             View
                             <span class="block max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-gray-800"></span>
@@ -98,38 +134,38 @@
             </div>
         </div>
 
-        <div class="mt-12 bg-gray-50 rounded-xl p-4 flex text-center">
-            <div class="flex-1 py-2">
+        <div class="mt-12 bg-gray-50 rounded-xl p-4 grid grid-cols-2 lg:grid-cols-4 gap-5 text-center">
+            <div class="py-2">
                 <p class="text-2xl font-semibold">5 Star</p>
                 <p class="text-gray-600">Fiverr Rating</p>
             </div>
-            <div class="flex-1 py-2">
+            <div class="py-2">
                 <p class="text-2xl font-semibold">2 Years</p>
                 <p class="text-gray-600">Experience</p>
             </div>
-            <div class="flex-1 py-2">
+            <div class="py-2">
                 <p class="text-2xl font-semibold">15+</p>
                 <p class="text-gray-600">Projects</p>
             </div>
-            <div class="flex-1 py-2">
+            <div class="py-2">
                 <p class="text-2xl font-semibold">95%</p>
                 <p class="text-gray-600">Client Satisfaction</p>
             </div>
         </div>
     </div>
 
-    <hr class="lg:mx-64 mx-5 my-24">
+    <hr class="xl:mx-64 lg:mx-14 mx-10 my-24">
 
-    <div class="lg:mx-64 mx-5 mb-24">
+    <div class="xl:mx-64 lg:mx-14 mx-10 mb-24">
         <h1 class="text-3xl text-center font-semibold mb-5">My Projects</h1>
         <p class="text-gray-500 text-center mb-10">Check out some of the work I’m most proud of. Each project showcases <br> my skills and passion.</p>
         <div class="relative">
-            <div class="w-px h-[75rem] bg-gray-200 absolute left-1/2"></div>
-            <div class="grid grid-cols-2">
+            <div class="w-px lg:h-[75rem] h-full bg-gray-200 absolute lg:left-1/2"></div>
+            <div class="grid lg:grid-cols-2 grid-cols-1">
                 <div class="px-1">
-                    <div class="rounded-full bg-white border-gray-400 border w-4 h-4 absolute left-1/2 mt-2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 "></div>
-                    <div class="mx-5 flex flex-col items-end gap-2.5">
-                        <a href="" target="_blank">
+                    <div class="rounded-full bg-white border-gray-400 border w-4 h-4 absolute lg:left-1/2 mt-2 -translate-x-2/3 lg:-translate-x-1/2"></div>
+                    <div class="mx-5 flex flex-col lg:items-end gap-2.5">
+                        <a href="http://ffinder.infinityfreeapp.com" target="_blank">
                             <div class="flex">
                                 <div class="text-gray-900 text-2xl font-semibold group">
                                     FFinder
@@ -140,7 +176,7 @@
                         </a>
                         <p class="text-gray-500 text-lg">Website</p>
                         <p class="text-gray-500 font-semibold border border-gray-300 w-fit px-5 py-2 rounded-full hover:shadow duration-300">2019-2020</p>
-                        <p class="text-gray-500 w-[30rem] text-right">
+                        <p class="text-gray-500 xl:w-[30rem] lg:text-right">
                             Developed a platform where users can share their social media profiles globally. Gained hands-on experience with PHP, MySQL, HTML, CSS, jQuery, and Bootstrap, and learned how to integrate front-end and back-end technologies.
                         </p>
                     </div>
@@ -148,7 +184,7 @@
                 <div class="px-1"></div>
                 <div class="px-1"></div>
                 <div class="px-1 mt-5">
-                    <div class="rounded-full bg-white border-gray-400 border w-4 h-4 absolute mt-2 right-1/2 translate-y-4 sm:translate-y-0 transform translate-x-1/2 "></div>
+                    <div class="rounded-full bg-white border-gray-400 border w-4 h-4 absolute lg:left-1/2 mt-2 -translate-x-2/3 lg:-translate-x-1/2"></div>
                     <div class="mx-5 flex flex-col gap-2.5">
                         <a href="./maze3d.apk" download="download">
                             <div class="flex">
@@ -161,7 +197,7 @@
                         </a>
                         <p class="text-gray-500 text-lg">Game</p>
                         <p class="text-gray-500 font-semibold border border-gray-300 w-fit px-5 py-2 rounded-full hover:shadow duration-300">2020-2021</p>
-                        <p class="text-gray-500 w-[30rem] text-left">
+                        <p class="text-gray-500 xl:w-[30rem] lg:text-left">
                             Created a 3D game using the Unity engine, with scripting in C#. Acquired skills in 3D modeling and animation with Blender, and learned the fundamentals of game development, from design to implementation.
                         </p>
                     </div>
@@ -169,8 +205,8 @@
                 <div class="px-1"></div>
                 <div class="px-1"></div>
                 <div class="px-1 mt-5">
-                    <div class="rounded-full bg-white border-gray-400 border w-4 h-4 absolute left-1/2 mt-2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 "></div>
-                    <div class="mx-5 flex flex-col items-end gap-2.5">
+                    <div class="rounded-full bg-white border-gray-400 border w-4 h-4 absolute lg:left-1/2 mt-2 -translate-x-2/3 lg:-translate-x-1/2"></div>
+                    <div class="mx-5 flex flex-col lg:items-end gap-2.5">
                         <a href="./slidecube.apk" download="download">
                             <div class="flex">
                                 <div class="text-gray-900 text-2xl font-semibold group">
@@ -182,7 +218,7 @@
                         </a>
                         <p class="text-gray-500 text-lg">Game</p>
                         <p class="text-gray-500 font-semibold border border-gray-300 w-fit px-5 py-2 rounded-full hover:shadow duration-300">2020-2021</p>
-                        <p class="text-gray-500 w-[30rem] text-right">
+                        <p class="text-gray-500 xl:w-[30rem] lg:text-right">
                             Created a professional game in Unity with a strong focus on UI/UX design and visual effects. Gained experience in refining animations and providing a smooth, engaging user experience.
                         </p>
                     </div>
@@ -191,7 +227,7 @@
                 <div class="px-1"></div>
                 <div class="px-1"></div>
                 <div class="px-1 mt-5">
-                    <div class="rounded-full bg-white border-gray-400 border w-4 h-4 absolute mt-2 right-1/2 translate-y-4 sm:translate-y-0 transform translate-x-1/2 "></div>
+                    <div class="rounded-full bg-white border-gray-400 border w-4 h-4 absolute lg:left-1/2 mt-2 -translate-x-2/3 lg:-translate-x-1/2"></div>
                     <div class="mx-5 flex flex-col gap-2.5">
                         <a href="./flappyshape.apk" download="download">
                             <div class="flex">
@@ -204,7 +240,7 @@
                         </a>
                         <p class="text-gray-500 text-lg">Game</p>
                         <p class="text-gray-500 font-semibold border border-gray-300 w-fit px-5 py-2 rounded-full hover:shadow duration-300">2021-2022</p>
-                        <p class="text-gray-500 w-[30rem] text-left">
+                        <p class="text-gray-500 xl:w-[30rem] lg:text-left">
                             Developed a 2D game using Unity, focusing on creating a minimalistic UI/UX. Learned how to integrate In-App Purchases (IAP) and explored various Unity services for enhancing game functionality.
                         </p>
                     </div>
@@ -212,8 +248,8 @@
                 <div class="px-1"></div>
                 <div class="px-1"></div>
                 <div class="px-1 mt-5">
-                    <div class="rounded-full bg-white border-gray-400 border w-4 h-4 absolute left-1/2 mt-2 -translate-y-4 sm:translate-y-0 transform -translate-x-1/2 "></div>
-                    <div class="mx-5 flex flex-col items-end gap-2.5">
+                    <div class="rounded-full bg-white border-gray-400 border w-4 h-4 absolute lg:left-1/2 mt-2 -translate-x-2/3 lg:-translate-x-1/2"></div>
+                    <div class="mx-5 flex flex-col lg:items-end gap-2.5">
                         <a href="https://coderket.com" target="_blank">
                             <div class="flex">
                                 <div class="text-gray-900 text-2xl font-semibold group">
@@ -225,7 +261,7 @@
                         </a>
                         <p class="text-gray-500 text-lg">Web Platform</p>
                         <p class="text-gray-500 font-semibold border border-gray-300 w-fit px-5 py-2 rounded-full hover:shadow duration-300">2023-2024</p>
-                        <p class="text-gray-500 w-[30rem] text-right">
+                        <p class="text-gray-500 xl:w-[30rem] lg:text-right">
                             Developed a platform using Vue.js, Node.js, and MySQL where developers can buy and sell code, scripts, and themes. 
                             Focused on SEO optimization and minimalistic UI/UX.
                         </p>
@@ -245,20 +281,20 @@
         </div>
     
         <div class="mx-auto md:w-2/3 lg:w-1/2">
-            <div class="-m-2 flex flex-wrap">
+            <form id="contact-form" class="-m-2 flex flex-wrap">
                 <div class="w-1/2 p-2">
-                    <input type="text" id="name" name="name" class="w-full py-3 px-3 text-gray-800 rounded-lg border focus:outline-0 focus:border-gray-400 duration-300" placeholder="Name" />
+                    <input type="text" id="user_name" name="name" class="w-full py-3 px-3 text-gray-800 rounded-lg border focus:outline-0 focus:border-gray-400 duration-300" placeholder="Name" />
                 </div>
                 <div class="w-1/2 p-2">
-                    <input type="email" id="email" name="email" class="w-full py-3 px-3 text-gray-800 rounded-lg border focus:outline-0 focus:border-gray-400 duration-300" placeholder="Email" />
+                    <input type="email" id="user_email" name="email" class="w-full py-3 px-3 text-gray-800 rounded-lg border focus:outline-0 focus:border-gray-400 duration-300" placeholder="Email" />
                 </div>
                 <div class="mt-4 w-full p-2">
                     <textarea id="message" name="message" class="h-32 w-full resize-none py-3 px-3 rounded-lg border focus:outline-0 focus:border-gray-400 duration-300" placeholder="Message"></textarea>
                 </div>
                 <div class="w-full p-2">
-                    <button class="mx-auto flex p-5 py-2.5 border rounded-full border-gray-400 mt-2.5 text-lg hover:border-gray-900 duration-300">Send</button>
+                    <input type="submit" value="Send" id="submit" class="mx-auto flex p-5 py-2.5 border rounded-full border-gray-400 mt-2.5 text-lg hover:border-gray-900 duration-300 disabled:bg-gray-200 disabled:border-gray-900 disabled:cursor-not-allowed cursor-pointer">
                 </div>
-            </div>
+            </form>
         </div>
     </section>
 
