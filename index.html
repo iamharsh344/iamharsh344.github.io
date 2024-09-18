@@ -5,17 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
         ::selection {
             background: rgb(43, 43, 43);
             color: white;
         }
-        .commonninja-ribbon-link{
-            display: none !important;;
-        }
     </style>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script type="text/javascript">
         (function() {
             emailjs.init({
@@ -38,14 +35,13 @@
                     .then(() => {
                             document.getElementById('submit').value = 'Submited';
                             document.getElementById('submit').disabled = true;
-                        }, (error) => {
-                            // console.log('FAILED...', error);
-                        });
+                        }, (error) => {});
                 }
 
             });
         }
     </script>
+    
 </head>
 <body style="font-family: Poppins;">
 
@@ -78,7 +74,7 @@
         </div>
     </div>
 
-    <section class="xl:mx-64 lg:mx-14 mx-10 flex flex-col-reverse lg:flex-row lg:gap-0 gap-10 justify-between items-center text-gray-900 lg:my-20 my-10">
+    <div class="xl:mx-64 lg:mx-14 mx-10 flex flex-col-reverse lg:flex-row lg:gap-0 gap-10 justify-between items-center text-gray-900 lg:my-20 my-10">
         <div class="mx-auo">
             <p class="text-lg text-gray-800">Hey there i am</p>
             <p class="text-5xl font-semibold">Harsh Choudhary</p>
@@ -92,15 +88,15 @@
             </div>
             <a href="https://drive.google.com/file/d/1zxD36CvSdFzPtubx5JAsbFnmnMHm5BoL/view?usp=sharing" target="_blank" class="p-5 py-2.5 border rounded-full border-gray-400 text-lg hover:border-gray-900 duration-300 cursor-pointer">Download CV</a>
         </div>
-        <img class="lg:size-96 size-80 rounded-full duration-300" src="./avatar.jpg">
-    </section>
+        <img class="lg:size-96 size-80 sm:min-w-72 sm:min-h-72 w-60 h-60 rounded-full" src="./avatar.jpg">
+    </div>
 
     <hr class="xl:mx-64 lg:mx-14 mx-10 my-24">
 
     <a class="invisible block h-20 -mt-20" id="about"></a>
     <section class="xl:mx-64 lg:mx-14 mx-10 mt-12 text-center">
         <h1 class="font-semibold text-3xl mb-5">About Me</h1>
-        <p class="text-gray-500 w-3/ 4">
+        <p class="text-gray-500">
             I am Harsh Choudhary, a web and game developer with 4 years of experience in web development and 2 years in
             game development. I specialize in modern web technologies and have been freelancing for the past 2 years,
             successfully delivering projects for a variety of clients. My technical expertise, combined with my freelancing
